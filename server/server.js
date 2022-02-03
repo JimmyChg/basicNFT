@@ -1,18 +1,8 @@
-const http = require("http")
-const fs = require('fs').promises;
-const express = require('express')
-const app = require("./app")
-
-app.use(express.static('public'));
-
-const host = 'localhost';
 const PORT = 8000;
+const express = require('express')
+const app = express()
 
-const server = http.createServer(app);
-
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+app.use(express.static(`${__dirname}/public`));
 
 app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
 
