@@ -1,28 +1,18 @@
-const http = require("http");
+const http = require("http")
 const fs = require('fs').promises;
-
+const express = require('express')
 const app = require("./app")
+
 app.use(express.static('public'));
 
 const host = 'localhost';
-const port = 8000;
+const PORT = 8000;
 
-let indexFile;
+const server = http.createServer(app);
 
-const requestListener = function (req, res) {
-    res.setHeader("Content-Type", "text/html");
-    res.writeHead(200);
-    res.end(indexFile);
-};
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
 
-const server = http.createServer(requestListener);
-
-fs.readFile(__dirname+"/index.html")
-    .then(contents => {
-        indexFile = contents;
-        server.listen(port,host,() => {})
-    })
-    .catch(err => {
-        process.exit(1);
-    })
+app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
 
