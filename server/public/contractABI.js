@@ -1,4 +1,4 @@
-[
+window.mainABI=[
 	{
 		"anonymous": false,
 		"inputs": [
