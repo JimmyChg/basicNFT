@@ -3,34 +3,42 @@
 
 <head>
   <title>NFT</title>
+  <link rel="stylesheet" href="index.css">
+
 </head>
 
 <body>
   <h1>Welcome to my NFT page</h1>
-  <p> The owner of the contract is: </p>
-  <div id="metamaskMissing">You don't have metamask installed on your browser. Please install it before being able to interact with this webpage.</div>
+  <div id="ownerOfContract"></div>
+  <div id="addressOfContract"></div>
+  <div id="metamaskMissing">You don't have metamask installed on your browser. Please install it before being able to
+    interact with this webpage.</div>
 
-  <p> If you want to mint your personal NFT: (0.001 ether)
+  <p> Mint your personal NFT: (0.001 ether)
     <input id="mint">
     <button id="mintButton">Mint</button>
   </p>
-  <p> If you want to transfer a token
-    <button onclick="transfer()">Transfer</button>
-  </p>
-  <p> If you want to know who belongs a NFT (by putting the tokenID)
+  <div> Transfer a token
+    <input type="number" id="whichToken">
+    <p>
+      to: <input type="text" size="50" id="to">
+      <button id="transferButton">Transfer</button>
+    </p>
+  </div>
+  <p> Owner of NFT (tokenID):
     <input type="number" id="ownerOf">
     <button id="ownerOfButton">search</button>
-    <div id="ownerOfOutput"></div>
+  <div id="ownerOfOutput"></div>
 
   </p>
-  <p> If you want to get the number of NFT that someone own:
+  <p> Number of NFT (address):
     <input type="text" size="50" id="balanceOf">
     <button id="balanceOfButton">search</button>
-    <div id="balanceOfOutput"></div>
+  <div id="balanceOfOutput"></div>
   </p>
 </body>
 <script type="text/javascript" src="/interactBlockchain.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 <script type="text/javascript" src="/contractABI.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 
 </html>
