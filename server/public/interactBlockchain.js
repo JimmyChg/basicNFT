@@ -19,7 +19,7 @@ let transferButtonFunc = async (contract, account) => {
         let result = await contract.methods.safeTransferFrom(account, to, whichToken).send({ from: account }, (error, transactionHash) => {
         })
     } catch (err) {
-
+        alert("Couldn't perform the transfer, verify you are the owner of the token")
     }
 }
 let getBalanceButtonFunc = async contract => {
