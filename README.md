@@ -1,9 +1,19 @@
 # basicNFT
 Basic interface for minting NFT, and transfer them between users.
 
-## Interface
+# Requirements
 
-You can visit the site [here](http://3.8.118.7/)
+* Nodejs installed
+  
+# How to
+
+To run it locally, clone this repo and run
+```
+yarn 
+node server.js
+```
+
+Then go [here](localhost:8000)
 
 # Improvement
 

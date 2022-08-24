@@ -38,11 +38,9 @@ let getOwnerButtonFunc = async contract => {
         let result = await contract.methods.ownerOf(token).call()
         document.getElementById("ownerOfOutput").innerHTML = "\t The owner of " + token + " is " + result;
     } catch (err) {
-
+    
     }
 }
-
-
 
 let main = async () => {
     await waitForLoad()

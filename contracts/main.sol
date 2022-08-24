@@ -14,6 +14,7 @@ contract MyNFT is ERC721, ownable {
         _owners[tokenAvailable] = msg.sender;
         _balances[msg.sender] += 1;
         _tokenUris[tokenAvailable] = uri;
+        emit Transfer(address(0), msg.sender, tokenAvailable);
     }
 
     function withdraw() external {
